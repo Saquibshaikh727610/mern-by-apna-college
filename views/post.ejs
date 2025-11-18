@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post page</title>
+</head>
+<body>
+    <h1>Post Details</h1>
+
+   
+        <div class="post">
+          
+            <h3>username :@ <span><%= post.username %></span> </h3>
+            <h3>id : <span> <%= post.id %></span></h3>
+            
+            <h3>class :   <span> <%= post.department %></span></h3>
+            <h3>skills :   <span>  <%= post.skills %></span></h3>
+        </div>
+              
+    <p>Click edit to modify this post</p>
+    <button>
+        <a href="/post/<%=post.id %>/edit">Edit post</a>
+    </button>
+    <button>
+        <a href="/">Back to Home</a>
+    </button>
+</body>
+</html>

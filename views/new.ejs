@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new post</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            justify-content: center;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            background-color: darkkhaki;
+        }
+        form{
+            border: 2px solid black;
+            width: 25rem;
+            height: 26rem;
+            background-color: royalblue;
+            border-radius: 10px;
+            font-size: larger;
+            font-weight: 800;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>create new post by filling this form </h1>
+    <form action="http://localhost:3000/new" method="POST">
+        <label for="username" >Enter your username</label>
+        <input type="text" name="username" placeholder="edit your username">
+        <br><br>
+        <label for="skills" >Enter your skills</label>
+        <input type="text" name="skills" placeholder="Enetr your skills">
+        <br>
+        <label for="id" >Enter your id</label>
+        <input type="text" name="id" placeholder="Enter your id">
+        <br>
+        <label for="department" >Enter your department</label>
+        <input type="text" name="department" placeholder="Enter your department">
+        <button> submit </button>
+    </form>
+</body>
+</html>
