@@ -72,6 +72,10 @@ margin-left: 10%;
             font-size: larger;
             text-shadow: .5px .5px 5px black;
         }
+        .preview{
+            width: 100px;
+            height: 100px;
+        }
   </style>
 </head>
 <body>
@@ -85,6 +89,19 @@ margin-left: 10%;
             
             <h3>class :   <span> <%= posts[i].department %></span></h3>
             <h3>skills :   <span>  <%= posts[i].skills %></span></h3>
+          <div class="preview">
+    <label for="image_uploads" >Choose images to upload (PNG, JPG)</label>
+    <input
+    id="upload_input"
+
+      type="file"
+      id="image_uploads"
+      name="image_uploads"
+      accept=".jpg, .jpeg, .png"
+      multiple />
+      <img src="" alt="" id="image">
+      <button id="upload_buttton">upload</button>
+  </div>
             <div class="button">
                 <button>
                     <a href="/post/<%=posts[i].id  %>/edit">edit</a>
@@ -97,8 +114,7 @@ margin-left: 10%;
                 <% } %>
                 <a href="/new">CREATE NEW POST </a>
     </div>
-    <script>
-      
-    </script>
+    <!-- <img src="/face.png" alt=""> -->
+   <script src="upload.js"></script>
 </body>
 </html>

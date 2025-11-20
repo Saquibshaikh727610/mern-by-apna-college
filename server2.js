@@ -78,6 +78,13 @@ app.get("/post/:id", (req, res) => {
 })
 
 
+app.post("/login",(req,res)=>{
+    let {username} = req.body
+    console.log(username);
+    res.send("data received")
+    
+})
+
 app.get("/post/:id/edit", (req, res) => {
  let id = parseInt(req.params.id); 
     

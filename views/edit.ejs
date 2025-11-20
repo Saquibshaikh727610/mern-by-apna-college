@@ -9,9 +9,6 @@
     <h1>Edit your post here</h1>
     <p>Fill form to edit the post</p>
     <form action="/post/<%= post.id %>/edit?_method=PATCH" method="POST">
-        <label for="username">Edit your username</label>
-        <input type="text" name="username" value="<%= post.username %>" required>
-        <br><br>
         <label for="department">Edit your department</label>
         <input type="text" name="department" value="<%= post.department %>" required>
         <br><br>

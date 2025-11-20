@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form action="/upload" id="form" method="POST" enctype="multipart/form-data">
+    <label for="upload">Choose file</label>
+    <input type="file" name="image" id="upload" accept="image/*">
+    <br>
+    <button type="submit" id="upload_buttton">Upload</button>
+</form>
+
+<img id="image" width="150">
+<!-- <script src="upload.js"></script> -->
+<script>
+let input = document.getElementById("upload")//select html input element
+let upoadbutton = document.getElementById("upload_buttton")//select html button element
+let image = document.getElementById("image")//select html image element
+input.addEventListener("change",(e)=>{//eventlistner if input element me koi bhi change aata hai to handle karega 
+    const curFiles = input.files[0];//it stores files object jo event return karega 
+    console.log(curFiles);
+    // e.preventDefault()
+image.src = URL.createObjectURL(curFiles);//this set the image src = bloburl ; by using "url.createobjecturl" and it need "files" jo upar curlfiles me store kiya hai 
+})
+//  abhi tak browser me image choose karsakte hai and uska preview dekhsakte hai 
+//now 
+upoadbutton.addEventListener("click", async (e) => {
+    e.preventDefault(); // form submit stop
+
+    let form = document.getElementById("form");
+
+    let formData = new FormData(form); // form ke saare inputs + file
+
+    let res = await fetch("http://localhost:3000/upload", {
+        method: "POST",
+        body: formData
+    });
+
+    let data = await res.json();
+    console.log("Uploaded:", data);
+});
+
+
+
+</script>
+
+</body>
+</html>
